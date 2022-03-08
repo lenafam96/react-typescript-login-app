@@ -6,12 +6,22 @@ import FormContainer from "../components/FormContainer";
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const submitHandler = async(e: SyntheticEvent) => {
+  const submitHandler = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    console.log({email,password})
+    await fetch("http://localhost:8081/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: 'include',
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+
+    navigate('/')
   };
   return (
     <FormContainer>

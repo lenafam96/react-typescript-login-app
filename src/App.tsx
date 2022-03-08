@@ -19,7 +19,7 @@ function App() {
      async () => {
       const response = await fetch('http://localhost:8081/api/user', {
         headers: {'Content-Type': 'application/json' },
-        credentials: 'include'
+        credentials: 'include',
       })
 
       const data = await response.json()
@@ -33,7 +33,7 @@ function App() {
       <main>
         <Container>
             <Routes>
-              <Route path={path.HOME} element={() => <HomeScreen firstName={firstName}/>} />
+              <Route path={path.HOME} element={<HomeScreen firstName={firstName}/>} />
               <Route path={path.SIGNUP} element={<SignupScreen />} />
               <Route path={path.LOGIN} element={<LoginScreen />} />
             </Routes>

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
 interface Props {
-    firstName: string
+  firstName: string;
 }
 
+const HomeScreen = ({ firstName }: Props) => {
+  return firstName ? (
+    <h1>Welcome {firstName}!</h1>
+  ) : (
+    <h1>Welcome to Home page!</h1>
+  );
+};
 
-const HomeScreen = ({firstName}: Props) => {
-
-  return (
-    firstName? <h1>Welcome {firstName}!</h1>:<h1>Welcome to Home page!</h1>
-  )
-}
-
-export default HomeScreen
+export default HomeScreen;
